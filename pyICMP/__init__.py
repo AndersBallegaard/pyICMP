@@ -2,6 +2,9 @@ import socket
 import subprocess
 import platform
 
+name = "pyICMP"
+
+
 def ping(address, count=4):
     
     #validate ip address
@@ -18,7 +21,6 @@ def ping(address, count=4):
         cmd = ["ping", "-n", str(count), address]
     
     failed = subprocess.call(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
-    print(failed)
 
     #Assume it was sucessful
     r = True
