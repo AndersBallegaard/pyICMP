@@ -1,6 +1,7 @@
 # pyICMP
 ## A ping implementation in python using native CLI clients
 
+[![Requirements Status](https://requires.io/github/AndersBallegaard/pyICMP/requirements.svg?branch=master)](https://requires.io/github/AndersBallegaard/pyICMP/requirements/?branch=master)
 
 ### Getting started
 
