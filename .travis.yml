@@ -12,10 +12,11 @@ install:
   - pip3 install .
   - pip3 install pytest
   - pip3 install pytest-cov
+  - pip3 install codecov
 
 # Run the unit test
 script:
-  - pytest --cov=test/
+  - py.test  --cov-report term --cov=test
 
 # Push the results back to codecov
 after_success:
