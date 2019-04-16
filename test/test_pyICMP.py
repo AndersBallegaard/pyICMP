@@ -16,3 +16,12 @@ def test_ping_known_bad_address():
 def test_invalid_ip_address():
     with pytest.raises(ValueError):
         pyICMP.ping('invalid_address')
+
+def test_ping_count():
+    assert pyICMP.ping('8.8.8.8', count=8)
+
+def test_ttl():
+    assert pyICMP.ping('8.8.8.8', ttl=128)
+
+def test_too_low_ttl():
+    assert pyICMP.ping('8.8.8.8', ttl=1) == False

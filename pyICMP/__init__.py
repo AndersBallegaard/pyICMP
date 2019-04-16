@@ -5,7 +5,7 @@ import platform
 name = "pyICMP"
 
 
-def ping(address, count=4):
+def ping(address, count=4, ttl=255):
     
     #validate ip address
     try:
@@ -16,7 +16,7 @@ def ping(address, count=4):
     #get to pinging
 
     #detect os and set command in cmd var
-    cmd = ["ping", "-c", str(count), address]
+    cmd = ["ping", "-c", str(count), address, '-t', str(ttl)]
     if platform.system() == 'Windows':
         cmd = ["ping", "-n", str(count), address]
     
@@ -30,4 +30,6 @@ def ping(address, count=4):
         r = False
     
     return r
-    
+
+def traceroute(address):
+    pass
